@@ -3,7 +3,7 @@ import {createPool} from "mysql2/promise";
 export const pool = {
     host: 'localhost',
     user: 'root',
-    database: 'map-adds',
+    database: 'map_ads',
     namedPlaceholders: true,
     decimalNumbers: true,
 }
