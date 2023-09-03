@@ -62,5 +62,12 @@ test('AdRecord.insert inserts data to database', async() => {
 })
 
 
+test('AdRecord.findAll returns array of found entries', async()=> {
+    const ads = await AdRecord.findAll('Name')
+    expect(ads.length).toBeGreaterThanOrEqual(0)
+  })
 
-
+test('AdRecord.findAll returns array of found entries', async()=> {
+    const ads = await AdRecord.findAll('poiuuytrrewttyuii')
+    expect(ads.length).toEqual(0)
+})

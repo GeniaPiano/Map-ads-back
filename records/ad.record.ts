@@ -57,16 +57,15 @@ export class AdRecord implements AdEntity {
 
     }
 
-    static async findAll(name: string):Promise<SimpleAdEntity[]> {
-      const [results] = await pool.execute("SELECT * FROM `ads` WHERE `name` LIKE :search", {
-           search:`%${name}%`,
-       }) as AdRecordResults;
+    static async findAll(name: string): Promise<SimpleAdEntity[]> {
+        const [results] = await pool.execute("SELECT * FROM `ads` WHERE `name` LIKE :search", {
+            search: `%${name}%`,
+        }) as AdRecordResults;
 
-      return results.map(result => {
-          const {id, lat, lon} = result
+        return results.map(result => {
+            const {id, lat, lon} = result;
             return {id, lat, lon}
-      })
-
+        });
     }
 
     async insert(): Promise<void> {
