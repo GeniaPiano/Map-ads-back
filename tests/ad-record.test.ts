@@ -1,7 +1,7 @@
 import {AdRecord} from "../records/ad.record";
 
 const defaultObject = {
-    name: 'Test Name',
+    name: '[Test-12345] Test Name',
     description: 'lala',
     url: "http://hello.pl",
     price: 0,
@@ -12,7 +12,7 @@ const defaultObject = {
 test('Can build AdRecord', ()=> {
     const ad = new AdRecord(defaultObject)
 
-    expect(ad.name).toBe('Test Name')
+    expect(ad.name).toBe('[Test-12345] Test Name')
     expect(ad.description).toBe('lala')
 });
 
